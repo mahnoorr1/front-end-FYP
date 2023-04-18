@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import SignUp from './views/signUp';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
