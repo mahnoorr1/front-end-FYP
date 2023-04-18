@@ -9,15 +9,15 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import SignUp from './views/signUp';
-import signIn from './views/signIn';
+import SignIn from './views/signIn';
 import './App.css';
 
 function App() {
 
   return(
     <Routes>
-      <Route exact path='/SignIn' component={signIn}/>
-      <Route path='/SignUp' component={SignUp}/>
+      <Route path='/' component={<SignIn />}/>
+      <Route path='/signup' component={SignUp}/>
     </Routes>
   )
 

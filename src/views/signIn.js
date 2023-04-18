@@ -9,14 +9,14 @@ import Grid from '@mui/material/Grid';
 import '../App.css';
 import './signIn.css'
 
-function SignIn() {
+const SignIn = ()=> {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
     <div className="App">
       <header className="App-header">
-        <img src={require('..globe.png')} className="App-logo"/>
-        <div className='background-signIn'>
+        <img src={require('../globe.png')} className="App-logo"/>
+        <div className='background'>
           <div id='background'></div>
           <div className='sign'>Sign In</div>
           <hr></hr>
