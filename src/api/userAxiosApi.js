@@ -32,6 +32,18 @@ export const registerUser = async (
     )
 }
 
-export const loginUser = async () => {
+export const loginUser = async (email, password) => {
+  Axios.post('/users/login' , {email, password})
+  .then((response) => {
+    console.log(response);//response data
+    console.log(response.data);//response data
+    console.log(response.status);//Status code
+    console.log(response.statusText);//OK for 200
+    console.log(response.headers);//Header
+  }, (error) => {
+    console.log(error.response);
+  }
+
+)
     
 }
