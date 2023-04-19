@@ -12,3 +12,13 @@
   border-color: rgb(140, 155, 174);
   margin-left: 20vh;
 	}
+  
+.sign {
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 37%;
+  margin-top: 20px;
+  position: relative;
+  color: #fff;
+  padding: 10px;
+}
