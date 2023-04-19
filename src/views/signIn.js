@@ -8,15 +8,16 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import '../App.css';
 import './signIn.css'
+import { loginUser } from '../api/userAxiosApi';
 
-function SignIn() {
+const SignIn = ()=> {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
     <div className="App">
       <header className="App-header">
-        <img src={require('..globe.png')} className="App-logo"/>
-        <div className='background-signIn'>
+        <img src={require('../globe.png')} className="App-logo"/>
+        <div className='background'>
           <div id='background'></div>
           <div className='sign'>Sign In</div>
           <hr></hr>
@@ -52,7 +53,7 @@ function SignIn() {
               className = "remember"
             />
             <Button 
-            
+              onClick={() => loginUser(email,password)}
               style={{
                 borderRadius: 10,
                 padding: "10px 26px",
@@ -72,7 +73,7 @@ function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2" color={"rgb(216, 232, 245)"}>
+                <Link href="/signup" variant="body2" color={"rgb(216, 232, 245)"}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

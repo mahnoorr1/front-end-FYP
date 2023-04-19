@@ -1,12 +1,12 @@
 import '../globe.png';
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
+//import FormControlLabel from '@mui/material/FormControlLabel';
+//import Checkbox from '@mui/material/Checkbox';
+import { Button } from '@mui/material';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
-import '../App.css';
+import  {registerUser}  from '../api/userAxiosApi';
 import './signUp.css';
 
 function SignUp() {
@@ -15,7 +15,7 @@ function SignUp() {
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [ConfirmPass, setConfirmPass] = useState('');
-  const [gender, setGender] = useState('');
+  //const [gender, setGender] = useState('');
   const [phone, setPhone] = useState('');
   
   return (
@@ -99,23 +99,34 @@ function SignUp() {
                 onChange={e => {setConfirmPass(e.target.value)}}
               />
               <div className='break'></div>
-            <Button 
-            
+            <Button
+              //Gender Is missing that's why i used Male as default 
+              //Image Upload Option is missing i used './logo192.png'
+              onClick = {
+                () =>
+                registerUser(
+                  fname,lname,email,password,"Male",'./logo192.png',phone,false
+                  )
+                    }
               style={{
                 borderRadius: 10,
                 padding: "10px 26px",
                 fontSize: "16px",
-            }}
+                }}
               type="submit"
               fullWidth
               variant="outlined"
-              sx={{ mt: 2, mb: 2, color: 'white'}}
+              sx= {{ 
+                    mt: 2, 
+                    mb: 2, 
+                    color: 'white'
+              }}
             >
               Sign Up
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="#" variant="body2" color={"rgb(216, 232, 245)"}>
+                <Link href="/" variant="body2" color={"rgb(216, 232, 245)"}>
                   {"Already have an account? Sign In"}
                 </Link>
               </Grid>
