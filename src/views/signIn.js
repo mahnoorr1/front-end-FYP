@@ -72,7 +72,7 @@ const SignIn = ()=> {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2" color={"rgb(216, 232, 245)"}>
+                <Link href="/signup" variant="body2" color={"rgb(216, 232, 245)"}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
