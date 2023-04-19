@@ -17,7 +17,7 @@ const SignIn = ()=> {
     <div className="App">
       <header className="App-header">
         <img src={require('../globe.png')} className="App-logo"/>
-        <div className='background'>
+        <div className='background-signIn'>
           <div id='background'></div>
           <div className='sign'>Sign In</div>
           <hr></hr>
