@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import '../App.css';
-import './signIn.css'
+import './signIn.css';
 import { loginUser } from '../api/userAxiosApi';
 
 const SignIn = ()=> {
@@ -53,6 +53,7 @@ const SignIn = ()=> {
               className = "remember"
             />
             <Button 
+            href='/profile'
               onClick={() => loginUser(email,password)}
               style={{
                 borderRadius: 10,
