@@ -4,6 +4,7 @@ import '../App.css'
 import './PaymentScreen.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
+import { TextField } from '@mui/material';
 
 const PaymentScreen = () => {
   const stripe = useStripe();
@@ -19,7 +20,7 @@ const PaymentScreen = () => {
     // Get references to the card elements
     const cardNumberElement = elements.getElement(CardNumberElement);
     const cardExpiryElement = elements.getElement(CardExpiryElement);
-    const cardCvcElement = elements.getElement(CardCvcElement);
+    const CardCvcElement = elements.getElement(CardCvcElement);
 
     // Create a payment method using the card details entered by the user
     const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -77,9 +78,23 @@ const PaymentScreen = () => {
             <FontAwesomeIcon icon={faCreditCard} style={{ marginRight: '10px' }} />
           </div>
         </div>
-
+        <div style={{ marginBottom: '7%' , display:'flex' , flexDirection:'column' }}>
+          <TextField
+            label='Card Holder Name'
+            sx={{border: "solid transparent 2px" , color:'white'}}
+            variant="outlined"
+            InputLabelProps={{ 
+              style: { 
+                color: 'white' , fontSize:'22px'
+              } }}
+            inputProps={{ 
+              style: { 
+                color: 'white' ,fontSize:'20px' 
+              } }}
+             />
+        </div>
         <div style={{ marginBottom: '7%' }}>
-          <label style={{  marginBottom: '5%' }}>
+          <label >
             Card number
           </label>
           <CardNumberElement options={{ style: elementStyles }} />
@@ -99,13 +114,14 @@ const PaymentScreen = () => {
         <button
           type="submit"
           style={{
-            backgroundColor: 'rgb(140, 155, 174)',
+            backgroundColor: 'green',
             color: 'white',
             padding: '12px 24px',
             borderRadius: '4px',
             border: 'none',
             cursor: 'pointer',
           }}
+          
           disabled={!stripe}
         >
           Pay Now
