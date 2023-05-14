@@ -51,7 +51,7 @@ const PaymentScreen = () => {
       },
       padding: '12px',
       borderRadius: '4px',
-      border: '1px solid #e2e8f0',
+      border: '1px solid white',
       
     },
   };
@@ -116,15 +116,18 @@ const PaymentScreen = () => {
           style={{
             backgroundColor: 'green',
             color: 'white',
-            padding: '12px 24px',
             borderRadius: '4px',
             border: 'none',
             cursor: 'pointer',
+            width:'35%',
+            height:'30%',
+            padding:'3%',
+            fontSize:'22px'
           }}
           
           disabled={!stripe}
         >
-          Pay Now
+          PAY NOW
         </button>
       </form>
     </div>
