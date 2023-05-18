@@ -13,6 +13,12 @@ import { loginUser } from '../api/userAxiosApi';
 const SignIn = ()=> {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleButtonClick = (event) => {
+    event.preventDefault(); // Prevents the default form submission behavior
+    loginUser(email, password)
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -53,8 +59,7 @@ const SignIn = ()=> {
               className = "remember"
             />
             <Button 
-            href='/profile'
-              onClick={() => loginUser(email,password)}
+              onClick={ handleButtonClick}
               style={{
                 borderRadius: 10,
                 padding: "10px 26px",

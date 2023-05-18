@@ -1,5 +1,6 @@
 import { Axios } from "./connect";
 
+
 export const registerUser = async (
                 Firstname, 
                 Lastname, 
@@ -9,6 +10,7 @@ export const registerUser = async (
                 Image,
                 PhoneNumber,
                 Subscription) => {
+  
     await Axios.post('/users/signup' , {
         Firstname, 
         Lastname, 
@@ -25,6 +27,7 @@ export const registerUser = async (
         console.log(response.status);//Status code
         console.log(response.statusText);//OK for 200
         console.log(response.headers);//Header
+        
       }, (error) => {
         console.log(error.response);
       }
@@ -40,8 +43,13 @@ export const loginUser = async (email, password) => {
     console.log(response.status);//Status code
     console.log(response.statusText);//OK for 200
     console.log(response.headers);//Header
+    if(response.status === 200){
+      window.location.href = '/profile'
+    }
+    
   }, (error) => {
     console.log(error.response);
+    
   }
 
 )

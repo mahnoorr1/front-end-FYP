@@ -17,7 +17,12 @@ function SignUp() {
   const [ConfirmPass, setConfirmPass] = useState('');
   //const [gender, setGender] = useState('');
   const [phone, setPhone] = useState('');
-  
+  const handleButtonClick = (event) => {
+    event.preventDefault(); // Prevents the default form submission behavior
+    registerUser(
+      fname,lname,email,password,"Male",'./logo192.png',phone,false
+      )
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -103,10 +108,7 @@ function SignUp() {
               //Gender Is missing that's why i used Male as default 
               //Image Upload Option is missing i used './logo192.png'
               onClick = {
-                () =>
-                registerUser(
-                  fname,lname,email,password,"Male",'./logo192.png',phone,false
-                  )
+                handleButtonClick
                     }
               style={{
                 borderRadius: 10,
