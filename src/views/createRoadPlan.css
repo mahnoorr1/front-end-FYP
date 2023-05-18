@@ -1,0 +1,47 @@
+.back {
+    background: linear-gradient(to right, #0A323D, #121F27);
+    background-repeat: no-repeat;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.back-image {
+    background-image: '../globe.png';
+    background-position: bottom 5px right 6px;
+    position: relative;
+    display: flex;
+}
+
+.back-blur {
+    height: 75vh;
+    width: 85vw;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:  #567e89;
+    backdrop-filter: blur(10px);
+    opacity: 0.1;
+    justify-content: center;
+  }
+  .background-pricing {
+	height: 60vh;
+	width: 70vw;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    border-style: solid;
+    border-color: rgb(140, 155, 174);
+    margin-left: 30vh;
+    padding-top: 40px;
+}
