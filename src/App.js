@@ -4,10 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 
 import SignUp from './views/signUp';
 import SignIn from './views/signIn';
-import Profile from './views/profile';
-import CreateRoadPlan from './views/createRoadPlan';
-import Navbar from './components/navbar';
-
+import OtherRoutes from './OtherRoutes';
 import Payment from './views/Payment';
 import RoadPlanMapView from './views/roadPlanAerialView';
 import { Elements } from '@stripe/react-stripe-js';
@@ -24,12 +21,13 @@ function App() {
     <>
     {shouldRenderNavbar && <Navbar />}
       <Routes>
-      <Route path="/" element={<CreateRoadPlan />} />
+      <Route path="/" element={<SignIn />} />
       <Route path='/Payment' element={<Elements stripe={stripePromise}><Payment /></Elements>} />
       <Route path="/profile" element = {<Profile/>}/>
       <Route path='/signup' element={<SignUp />}/>
       <Route path='/createRoadPlan' element={<CreateRoadPlan />}/>
       <Route path='/roadPlanMapView' element={<RoadPlanMapView/>}/>
+      <Route path='/*' element={<OtherRoutes />} />
       </Routes>
     </>
   )
