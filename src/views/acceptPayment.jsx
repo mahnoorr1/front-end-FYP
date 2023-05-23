@@ -1,12 +1,10 @@
 // PaymentForm.js
 import React, { useState, useEffect } from 'react';
-import { CardNumberElement, CardExpiryElement, CardCvcElement, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { CardNumberElement, CardExpiryElement, CardCvcElement, CardElement, useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js';
 import { Button, TextField } from '@mui/material';
-import '../App.css'
+import '../App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons';
-import { loadStripe } from '@stripe/stripe-js';
-const stripePromise = loadStripe('pk_test_51NAEw6Apl2m6sshaxUhU5fLcS4mc6g9Zrnq7rFbOAmzWyn2z3c4a175P7AY4hMKts0cbLUb2eoYchrRLKUBsAAfd005AZdXoZ0');
 
 const PaymentForm = () => {
   const elements = useElements();
@@ -14,13 +12,15 @@ const PaymentForm = () => {
   const [paymentSuccess, setPaymentSuccess] = useState(null);
   const [cardHolderName, setCardHolderName] = useState('');
   console.log("\n\n\n\ninside payment");
-  const HandleSubmit = async (event) => {
-    // event.preventDefault();
-    const stripe = useStripe();
+  
+  const stripe = useStripe();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     if (!stripe || !elements) {
+      console.log("RETURNNN");
       return;
     }
-
+    console.log("Inside Submit");
     const cardElement = elements.getElement(CardElement);
     
     // Get references to the card elements
@@ -67,31 +67,40 @@ const PaymentForm = () => {
   //   } catch (error) {
   //     console.log('Error:', error.message);
   //   }
-    const response = await fetch('http://localhost:3000/payment', {
+  const month = cardExpiryElement._frame.contentWindow.__private__.cardExpiryInput[0].value.split('/')[0];
+  const year = cardExpiryElement._frame.contentWindow.__private__.cardExpiryInput[0].value.split('/')[1].trim();
+  const number = cardNumberElement.value;
+  const cvc = cardCvcElement.value;
+  console.log(number);
+  console.log("\n"+cvc+"\n"+year+"\n"+month)
+    const response = await fetch('http://localhost:5000/payment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        amount: 1000, // $10 in cents
+        amount: 100, // $10 in cents
+        currency: 'usd',
         cardHolderName,
-        cardNumberElement,
-        cardExpiryElement,
-        cardCvcElement,
+        number,
+        month,
+        year,
+        cvc,
       }),
     });
     if (response.ok) {
       const { clientSecret } = await response.json();
+      console.log("\n\n\n\ninside response");
 
       // Use Stripe.js to confirm the payment
       const result = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: {
             cardholderName: cardHolderName,
-            number: cardNumberElement,
+            number: cardNumberElement.value,
             exp_month: cardExpiryElement._frame.contentWindow.__private__.cardExpiryInput[0].value.split('/')[0],
             exp_year: cardExpiryElement._frame.contentWindow.__private__.cardExpiryInput[0].value.split('/')[1].trim(),
-            cvc: cardCvcElement,
+            cvc: cardCvcElement.value,
           },
         },
       });
@@ -125,7 +134,7 @@ const PaymentForm = () => {
   return (
     <div className='App-header' style={{  fontFamily: 'Helvetica, Arial, sans-serif' }}>
       
-      <form onSubmit={HandleSubmit} 
+      <form onSubmit={handleSubmit} 
         style={{
           border:'1',
           borderRadius:30,
@@ -189,7 +198,7 @@ const PaymentForm = () => {
         </div>
         <Button
           type="submit"
-          onClick={HandleSubmit}
+          onClick={handleSubmit}
           style={{
             backgroundColor: 'green',
             color: 'white',
@@ -200,7 +209,7 @@ const PaymentForm = () => {
             height:'25%',
             fontSize:'18px'
           }}
-          disabled = {cardHolderName == null}
+          // disabled = {cardHolderName == null}
         >
           PAY NOW
         </Button>

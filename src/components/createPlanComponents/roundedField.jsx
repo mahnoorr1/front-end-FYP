@@ -11,7 +11,7 @@ const CustomBox = styled(Box)(({ clicked, clickable, color}) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  margin: "15px",
+  margin: "10px",
   cursor: clickable ? "pointer" : "default",
 }));
 

@@ -20,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomButton = ({label}) => {
+const CustomButton = ({label, path}) => {
   const classes = useStyles();
 
   return (
-    <Button className={classes.root} variant="contained">
+    <Button className={classes.root} variant="contained" onClick = {()=>{window.location.href = path}}>
       {label}
     </Button>
   );

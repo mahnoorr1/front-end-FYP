@@ -12,7 +12,7 @@ import {
 const Navbar = () => {
   return (
     <>
-      <Nav>
+      <Nav style={{position: 'fixed', width: '98%',zIndex: '700'}}>
         <Bars />
         <img style={{
             height: '35px',

@@ -10,15 +10,15 @@ import PaymentForm from './views/acceptPayment';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { RoadPlanProvider } from './context/roadPlanContext';
-// const stripePromise = loadStripe('pk_test_51NAEw6Apl2m6sshaxUhU5fLcS4mc6g9Zrnq7rFbOAmzWyn2z3c4a175P7AY4hMKts0cbLUb2eoYchrRLKUBsAAfd005AZdXoZ0');
-
+const stripePromise = loadStripe('pk_test_51NAEw6Apl2m6sshaxUhU5fLcS4mc6g9Zrnq7rFbOAmzWyn2z3c4a175P7AY4hMKts0cbLUb2eoYchrRLKUBsAAfd005AZdXoZ0');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-     {/* <Elements stripe={stripePromise}><PaymentForm /></Elements>  */}
-     <RoadPlanProvider><App/></RoadPlanProvider>
+     <RoadPlanProvider>
+      <App/>
+     </RoadPlanProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

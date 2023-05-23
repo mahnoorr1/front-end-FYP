@@ -57,7 +57,7 @@ function CreateRoadPlan() {
                   Aerial View
                 </Link>
             <CheckBox/>
-            <CustomButton label={"Generate Plan"}/>
+            <CustomButton label={"Generate Plan"} path={''}/>
           </Box>
         </Box>
       </Box>

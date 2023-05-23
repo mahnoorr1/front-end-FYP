@@ -44,7 +44,7 @@ export const loginUser = async (email, password) => {
     console.log(response.statusText);//OK for 200
     console.log(response.headers);//Header
     if(response.status === 200){
-      window.location.href = '/profile'
+      window.location.href = '/createRoadPlan'
     }
     
   }, (error) => {

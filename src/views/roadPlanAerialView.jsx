@@ -3,6 +3,7 @@ import './createRoadPlan.css'
 import { Box, Typography, Paper, Grid, Divider } from '@material-ui/core';
 import AerialMap from '../components/createPlanComponents/aerialViewMap';
 import {RoadPlanContext} from '../context/roadPlanContext';
+import CustomButton from '../components/createPlanComponents/button';
 
 function RoadPlanMapView() {
   const [clickedComponent, setClickedComponent] = useState('');
@@ -31,7 +32,7 @@ function RoadPlanMapView() {
             </Typography>
             <Divider style={{width: '40%', margin: 15, backgroundColor: '#246C7E'}}></Divider>
             <AerialMap height={'67vh'} width={'80%'}></AerialMap>
-            
+            <CustomButton label = {'Save Changes'} path={'/createRoadPlan'}></CustomButton>
           </Box>
         </Box>
       </Box>
