@@ -27,7 +27,12 @@ export const registerUser = async (
         console.log(response.status);//Status code
         console.log(response.statusText);//OK for 200
         console.log(response.headers);//Header
-        
+        if(response.status == 201){
+          window.location.href = '/'
+        }
+        else{
+          alert("Invalid Data (User Email Already exists)")
+        }
       }, (error) => {
         console.log(error.response);
       }
@@ -38,19 +43,26 @@ export const registerUser = async (
 export const loginUser = async (email, password) => {
   Axios.post('/users/login' , {email, password})
   .then((response) => {
-    console.log(response);//response data
+    console.log('inside then');
     console.log(response.data);//response data
-    console.log(response.status);//Status code
-    console.log(response.statusText);//OK for 200
-    console.log(response.headers);//Header
-    if(response.status === 200){
-      window.location.href = '/createRoadPlan'
+  if(response.data.status == undefined){
+        console.log(response.data.email)
+        const User = {
+          id : response.data._id,
+          email : response.data.email,
+          token : response.data.token
+        }
+        localStorage.setItem('User', JSON.stringify(User));
+        window.location.href = '/createRoadPlan'
     }
+  else{
+    alert(response.data.error)
+  }
     
   }, (error) => {
     console.log(error.response);
-    
   }
+   
 
 )
     
