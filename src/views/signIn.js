@@ -17,6 +17,7 @@ const SignIn = ()=> {
   const handleButtonClick = (event) => {
     console.log("button clicked");
     event.preventDefault(); // Prevents the default form submission behavior
+    console.log("email " , email , " password " , password)
     loginUser(email, password)
   };
 
