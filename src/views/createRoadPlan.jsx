@@ -24,8 +24,7 @@ function CreateRoadPlan() {
   };
 
   return (
-    <>
-    <Box className='back'>
+    <Box className='backColor'>
       <Box className='back-image'>
         <Box>
           <Box style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
@@ -53,16 +52,15 @@ function CreateRoadPlan() {
               </Grid>
             </Grid>
             <Map height={'45vh'} width={'60%'} />
-            <Link href="/roadPlanMapView" variant="body2">
+            <Link style={{ marginLeft: '20px', color: '#45D69E'}} href="/roadPlanMapView" variant="body2">
                   Aerial View
                 </Link>
             <CheckBox/>
-            <CustomButton label={"Generate Plan"} path={''}/>
+            <CustomButton label={"Generate Plan"} path={'#'}/>
           </Box>
         </Box>
       </Box>
     </Box>
-    </>
   );
 }
 

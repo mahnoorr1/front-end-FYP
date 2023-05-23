@@ -50,7 +50,7 @@ const LandingPage = () => {
               width: '10.5vw',
             },
       }}
-      onClick={()=>{window.location.href = '/signUp'}}
+      onClick={()=>{window.location.href = '/signup'}}
       >
           Sign Up
       </Button>

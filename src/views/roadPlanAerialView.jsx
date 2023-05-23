@@ -16,7 +16,7 @@ function RoadPlanMapView() {
 
   return (
     <>
-    <Box className='back'>
+    <Box className='backColor'>
       <Box className='back-image'>
         <Box>
           <Box style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: 20 }}>
@@ -31,7 +31,7 @@ function RoadPlanMapView() {
                 Set on Map
             </Typography>
             <Divider style={{width: '40%', margin: 15, backgroundColor: '#246C7E'}}></Divider>
-            <AerialMap height={'67vh'} width={'80%'}></AerialMap>
+            <AerialMap height={'65vh'} width={'80%'}></AerialMap>
             <CustomButton label = {'Save Changes'} path={'/createRoadPlan'}></CustomButton>
           </Box>
         </Box>

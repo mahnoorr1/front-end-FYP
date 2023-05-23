@@ -11,6 +11,7 @@ import StarIcon from '@mui/icons-material/StarBorder';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import './pricing.css'
+import Link from '@mui/material/Link';
 
 const tiers = [
   {
@@ -140,7 +141,9 @@ function PricingContent() {
           ))}
         </Grid>
       </Container>
-      <div className='skip'>Skip</div>
+      <Link style={{ marginRight: '20px', color: '#45D69E', justifyContent: 'flex-end', display: 'flex'}} href="/createRoadPlan" variant="body2">
+          Skip
+      </Link>
       </div>
       </div>
       

@@ -21,9 +21,18 @@ export const NavLink = styled(Link)`
   padding-right: 3rem;
   height: 100%;
   cursor: pointer;
+  
   &.active {
-    color: #000000;
+    color: white;
   }
+  
+  &.active > .icon {
+    color: white;
+  }
+`;
+
+export const Icon = styled.span`
+  margin-right: 0.5rem;
 `;
   
 export const Bars = styled(FaBars)`
@@ -70,7 +79,7 @@ export const NavBtn = styled.nav`
 `;
   
 export const NavBtnLink = styled(Link)`
-  padding: 6px 22px;
+  padding: 12px 22px;
   color: #37C790;
   outline: none;
   border: none;

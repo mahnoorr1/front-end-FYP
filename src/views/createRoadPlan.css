@@ -1,12 +1,13 @@
-.back {
+.backColor {
     background: linear-gradient(to right, #0A323D, #121F27);
     background-repeat: no-repeat;
     padding-top: 40px;
+    height: 94.45vh
 }
 
 .back-image {
     background-image: url('../globe 1.png');
-    height: 100vh;
+    height: 94.45vh;
     width: 99vw;
     margin: 0px;
     background-position: 115% -85%;
@@ -17,7 +18,7 @@
 }
 
 .back-blur {
-    height: 82vh;
+    height: 78vh;
     width: 85vw;
     border-radius: 30px;
     backdrop-filter: blur(3px);

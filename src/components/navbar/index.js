@@ -7,7 +7,8 @@ import {
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
-  
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
   return (
@@ -22,28 +23,32 @@ const Navbar = () => {
             }} src={require('../../appLogo.png')}></img>
         <div style={{display: 'flex', justifyContent: 'flex-end'}}>
         <NavMenu>
-          <NavLink to='/about' activeStyle>
+          <NavLink exact to='/dashboard' activeClassName="active">
             Dashboard
           </NavLink>
-          <NavLink to='/events' activeStyle>
+          <NavLink exact to='/plans' activeClassName="active">
             Plans
           </NavLink>
-          <NavLink to='/createRoadPlan' activeStyle>
+          <NavLink exact to='/createRoadPlan' activeClassName="active">
             My Business
           </NavLink>
-          <NavLink to='/team' activeStyle>
+          <NavLink exact to='/routing' activeClassName="active">
             Routing
           </NavLink>
-          <NavLink to='/blogs' activeStyle>
+          <NavLink exact to='/help' activeClassName="active">
             Help and Support
+          </NavLink>
+          <NavLink exact to='/pricing' activeClassName="active">
+            Payment
           </NavLink>
           
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
-        <NavBtn>
-          <NavBtnLink to='/'>Sign In</NavBtnLink>
-        </NavBtn>
+        <NavBtnLink to={'/profile'}>
+          {/* <NavBtnLink to='/'>Sign In</NavBtnLink> */}
+          <FontAwesomeIcon icon={faUser} size='1x' />
+        </NavBtnLink>
         </div>
       </Nav>
     </>
