@@ -73,7 +73,7 @@ const PaymentForm = () => {
   const cvc = cardCvcElement.value;
   console.log(number);
   console.log("\n"+cvc+"\n"+year+"\n"+month)
-    const response = await fetch('http://localhost:5000/payment', {
+    const response = await fetch('http://localhost:3000/payment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

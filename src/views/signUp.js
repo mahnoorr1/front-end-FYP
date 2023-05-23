@@ -128,7 +128,7 @@ function SignUp() {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/" variant="body2" color={"rgb(216, 232, 245)"}>
+                <Link href="/signIn" variant="body2" color={"rgb(216, 232, 245)"}>
                   {"Already have an account? Sign In"}
                 </Link>
               </Grid>
