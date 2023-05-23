@@ -26,7 +26,7 @@ const Navbar = () => {
           <NavLink exact to='/dashboard' activeClassName="active">
             Dashboard
           </NavLink>
-          <NavLink exact to='/plans' activeClassName="active">
+          <NavLink exact to='/allRoadPlans' activeClassName="active">
             Plans
           </NavLink>
           <NavLink exact to='/createRoadPlan' activeClassName="active">

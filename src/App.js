@@ -14,6 +14,8 @@ import Profile from './views/profile';
 import CreateRoadPlan from './views/createRoadPlan'
 import LandingPage from './views/landingPage';
 import PricingContent from './views/pricing';
+import AllPlans from './views/allPlans/allRoadPlans';
+import PaymentForm from './views/acceptPayment';
 // import axios from 'axios'
 // axios.defaults.baseURL = 'http://localhost:5000/'
 
@@ -34,12 +36,13 @@ function App() {
       {shouldRenderNavbar && <Navbar />}
       <Routes>
         <Route path="/signIn" element={<SignIn />} />
-        <Route path="/payment" element={<Elements stripe={stripePromise}><Payment /></Elements>} />
+        <Route path="/payment" element={<Elements stripe={stripePromise}><PaymentForm /></Elements>} />
         <Route path='pricing' element = {<PricingContent/>}/>
         <Route path="/profile" element={<Profile />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/createRoadPlan" element={<CreateRoadPlan />} />
         <Route path="/roadPlanMapView" element={<RoadPlanMapView />} />
+        <Route path="/allRoadPlans" element={<AllPlans/>} />
         <Route path="/" element = {<LandingPage/>}></Route>
       </Routes>
     </>

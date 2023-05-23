@@ -148,10 +148,10 @@ const PaymentForm = () => {
       >
         <div style={{ marginBottom: '20px' }}>
           <label style={{ display: 'block', marginBottom: '10px', fontWeight: 'bold', color: 'black' }}>
-            Accepted Payment Methods
+            Pay For Subscription
           </label>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <FontAwesomeIcon icon={faCreditCard} style={{ marginRight: '10px', fontSize: '50px', color: '#37C790' }} />
+            <FontAwesomeIcon icon={faCreditCard} style={{ marginRight: '10px', fontSize: '50px', color: '#45D69E' }} />
           </div>
         </div>
         <div style={{ marginBottom: '7%' , display:'flex' , flexDirection:'column' }}>
@@ -200,7 +200,7 @@ const PaymentForm = () => {
           type="submit"
           onClick={handleSubmit}
           style={{
-            backgroundColor: 'green',
+            backgroundColor: '#45D69E',
             color: 'white',
             borderRadius: '4px',
             border: 'none',

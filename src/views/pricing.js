@@ -132,7 +132,7 @@ function PricingContent() {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <button className="button buy">
+                  <button className="button buy" onClick={()=>{window.location.href = "/payment"}}>
                     {tier.buttonText}
                   </button>
                 </CardActions>
